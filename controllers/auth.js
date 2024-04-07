@@ -33,7 +33,7 @@ const login = async (req, res) => {
 
     } catch (err) {
         return res.status(400).json({
-            msg: 'Apreciado usuario contacte al administrador.' // 
+            msg: 'Apreciado usuario contacte al administrador.'
         })
 
     }

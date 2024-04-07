@@ -12,7 +12,6 @@ usuariosPost = (req, res = response) => {
     })
 }
 
-
 usuariosPut = (req, res = response) => {
     res.json({
         msg: 'PUT API'

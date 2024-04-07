@@ -18,6 +18,6 @@ const UsuarioSchema = Schema({
         type: String,
         required: true,
         enum: ['Admin', 'Practicante', 'Cliente', 'Colaborador']
-    }
+    },
 })
 module.exports = model('Usuario', UsuarioSchema);

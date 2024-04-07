@@ -74,7 +74,7 @@ const usuariosDelete = async (req, res = response) => {
 
     const usuario = await Usuario.findOneAndDelete({ documento: documento });
     res.json({
-        msg: 'Usuario Eliminado', // Devuelve un mensaje indicando que se 
+        msg: 'Usuario Eliminado',
 
         usuario
     });
