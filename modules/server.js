@@ -6,11 +6,9 @@ const bodyParser = require('body-parser');
 class Server {
     constructor() {
         this.app = express();
-        this.port = process.env.PORT;
+        this.port = process.env.PORT || 10000;
 
         this.eventosPath = '/api/eventos';
-        this.usuariosPath = '/api/usuarios';
-        this.authPath = '/api/auth';
         this.middlewares();
         this.routes();
         this.connectDb();
@@ -30,8 +28,6 @@ class Server {
     routes() {
 
         this.app.use(this.eventosPath, require('../routes/eventos'));
-        this.app.use(this.usuariosPath, require('../routes/usuarios'));
-        this.app.use(this.authPath, require('../routes/auth'));
     }
     async connectDb() {
         await dbConnection();
