@@ -4,10 +4,10 @@ const Practicante = require('../modules/practicante'); // Asume esto
 const Colaborador = require('../modules/colaborador'); // Asume esto
 
 const eventosGet = async (req, res) => {
-    const { email } = req.query; // Cambiado a req.query para usar parámetros de consulta
+    const { gmail } = req.query; // Cambiado a req.query para usar parámetros de consulta
     try {
-        const practicante = await Practicante.findOne({ email });
-        const colaborador = await Colaborador.findOne({ email });
+        const practicante = await Practicante.findOne({ gmail });
+        const colaborador = await Colaborador.findOne({ gmail });
 
         if (!practicante && !colaborador) {
             return res.status(400).json({
@@ -15,7 +15,7 @@ const eventosGet = async (req, res) => {
             });
         }
 
-        const eventos = await Evento.find({ usuarios: email });
+        const eventos = await Evento.find({ usuarios: gmail });
         res.json({
             eventos
         });
